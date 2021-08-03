@@ -1,2 +1,2 @@
 #! /bin/bash
-ansible-runner run --inventory=$INVENTORY -p ../ztp-cluster-deploy/install-ai-operator/playbook.yml runner
+ansible-runner transmit /runner -p /runner/ztp-cluster-deploy/install-ai-operator/playbook.yml  | ansible-runner worker | ansible-runner process /runner
