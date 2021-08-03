@@ -1,0 +1,20 @@
+---
+version: 1
+
+build_arg_defaults:
+  EE_BASE_IMAGE: 'quay.io/ansible/ansible-runner:stable-2.10-devel'
+
+ansible_config: 'ansible.cfg'
+
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+
+additional_build_steps:
+  prepend:
+  - RUN git clone https://github.com/redhat-ztp/ztp-cluster-deploy
+  append:
+  - ADD run.sh /run.sh
+  - CMD /run.sh
+
+
