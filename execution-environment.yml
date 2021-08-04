@@ -16,5 +16,3 @@ additional_build_steps:
   append:
   - ADD run.sh /run.sh
   - CMD /run.sh
-
-
