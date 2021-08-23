@@ -11,8 +11,6 @@ dependencies:
   python: requirements.txt
 
 additional_build_steps:
-  prepend:
-  - RUN git clone https://github.com/redhat-ztp/ztp-cluster-deploy
   append:
   - ADD run.sh /run.sh
   - CMD /run.sh
